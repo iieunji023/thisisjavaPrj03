@@ -19,7 +19,7 @@ public class EBooksClass extends BookClass{
 		// 기존에 저장되어 있는 도서에 호환기기를 추가해야 한다.
 		super.bookInfo();
 		System.out.printf("superDevices: %s \n", superDevices);
-		System.out.println(super.getAuthor());
+		//System.out.println(super.getAuthor());
 		
 	}
 
