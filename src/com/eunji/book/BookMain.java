@@ -65,7 +65,8 @@ public class BookMain {
 			EBooksClass eBooksClass = new EBooksClass(title, author, price, publisher, superDevice);
 			bookList.add(eBooksClass);
 			
-			System.out.printf("title: %s, author: %s, price: %d, publisher: %s, superDevice: %s \n", title, author, price, publisher, superDevice);
+			eBooksClass.deviceInfo();
+//			System.out.printf("title: %s, author: %s, price: %d, publisher: %s, superDevice: %s \n", title, author, price, publisher, superDevice);
 			
 			return bookList;
 			
@@ -106,19 +107,13 @@ public class BookMain {
 	 * 도서 검색 METHOD START
 	 */
 	public static void search(List<BookClass> bookList, String search) {
-		Scanner sc = new Scanner(System.in);
-		
 		System.out.println(bookList.size());
 		
 		// 입력 받은 제목/저자 값으로 배열에 저장되어있는 객체 찾기 + 출력
 		for(int i = 0; i < bookList.size(); i++) {
 			if(search.equals(bookList.get(i).getAuthor()) || search.equals(bookList.get(i).getTitle())) {
 				if(bookList.get(i) instanceof EBooksClass) {
-				System.out.println("-------------------------------------------------------");
-				
-				System.out.println("-------------------------------------------------------");
-				
-				
+				BookClass bookClass = new EBooksClass();
 				
 			}
 			}else {
