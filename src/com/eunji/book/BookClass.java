@@ -5,7 +5,7 @@ public class BookClass {
 	private String author;
 	private int price;
 	private String publisher;
-	private float tax = 1.1f;
+	private final float tax = 1.1f;
 	
 	// 기본 생성자
 	public BookClass() {
@@ -16,12 +16,16 @@ public class BookClass {
 	public BookClass(String title, String author, int price, String publisher) {
 		this.title = title;
 		this.author = author;
-		this.price = price;
+		this.price = (int)(price *  tax);
 		this.publisher = publisher;
 		
 	}
 
-	// GETTER && SETTER
+	/*
+	 * GETTER && SETTER
+	 * private 접근제한자는 class 내에서만 사용할 수 있기 때문에
+	 * 다른 class에서도 사용하기 위해서는 GETTER와 SETTER를 만들어줘야 한다.
+	 */
 	public String getTitle() {
 		return title;
 	}
@@ -53,18 +57,13 @@ public class BookClass {
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
-
-	public float getTax() {
-		return tax;
-	}
-
-	public void setTax(float tax) {
-		this.tax = tax;
-	}
 	
+	// EBookClass와 PaperBookClass에서 공통적으로 쓰이는 필드를 출력하기 위한 METHOD
 	public void bookInfo() {
 		System.out.printf("title: %s, author: %s, price: %d, publisher: %s \n", getTitle(), getAuthor(), getPrice(), getPublisher());
 		
 	}
+	
+
 
 }
